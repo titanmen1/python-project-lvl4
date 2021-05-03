@@ -8,6 +8,7 @@ authors = ["Artem Arkhipov <arkhipov@algomost.ru>"]
 python = "^3.8"
 Django = "^3.2"
 gunicorn = "^20.1.0"
+django-bootstrap4 = "^3.0.1"
 
 [tool.poetry.dev-dependencies]
 
