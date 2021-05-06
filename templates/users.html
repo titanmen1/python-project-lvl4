@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% load i18n %}
+{% bootstrap_javascript jquery='full' %}
+
+
+{% block content %}
+
+
+<div class="card-deck mb-3 text-center">
+  <div class="card mb-4 shadow-sm">
+    <div class="card-header">
+      <h4 class="my-0 font-weight-normal">{% trans "Users" %}</h4>
+    </div>
+    <div class="card-body">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>{% trans 'Username' %}</th>
+          <th>{% trans 'first name' %}</th>
+          <th>{% trans 'Date creating' %}</th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+        <tr>
+          <td>{{ user.id }}</td>
+          <td>{{ user.username }}</td>
+          <td>{{ user.first_name }}</td>
+          <td>{{ user.date_joined }}</td>
+          <td>
+            <a class="p-2 text-dark" href="{% url 'edit_user' user.id %}">{% trans 'Edit' %}</a>
+            <a class="p-2 text-dark" href="{% url 'del_user' user.id %}">{% trans 'Delete' %}</a>
+          </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

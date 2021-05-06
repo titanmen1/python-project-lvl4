@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-03 16:17+0300\n"
+"POT-Creation-Date: 2021-05-06 11:49+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,18 +20,80 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: templates/index.html:38
+#: task_manager/views.py:25
+msgid "You are create new user"
+msgstr "Вы создали нового пользователя"
+
+#: task_manager/views.py:33
+msgid "You are logged in"
+msgstr "Вы авторизовались"
+
+#: task_manager/views.py:49
+msgid "You do not have permission to modify another user."
+msgstr "Вы не имеете прав на редактирование другого пользователя"
+
+#: task_manager/views.py:64
+msgid "You do not have permission to delete another user."
+msgstr "Вы не имеете прав на удаление другого пользователя"
+
+#: task_manager/views.py:66
+msgid "User deleted"
+msgstr "Пользователь был удален"
+
+#: templates/base.html:35
 msgid "Task Manager"
 msgstr "Менеджер задач"
 
-#: templates/index.html:40
-msgid "Login"
-msgstr "Логин"
-
-#: templates/index.html:41
+#: templates/base.html:38 templates/users.html:14
 msgid "Users"
 msgstr "Пользователи"
 
-#: templates/index.html:43
+#: templates/base.html:42
+msgid "Logout"
+msgstr "Выход"
+
+#: templates/base.html:46 templates/login.html:12 templates/logout.html:12
+msgid "Login"
+msgstr "Логин"
+
+#: templates/base.html:48
 msgid "Registration"
 msgstr "Регистрация"
+
+#: templates/del_user.html:12
+msgid "Are you sure you want to delete"
+msgstr "Вы действительно хотите удалить"
+
+#: templates/del_user.html:13
+msgid "Confirm"
+msgstr "Подтвердить"
+
+#: templates/edit_user.html:13
+msgid "Save"
+msgstr "Сохранить"
+
+#: templates/register.html:13
+msgid "Create"
+msgstr "Создать"
+
+#: templates/users.html:21
+#, fuzzy
+#| msgid "Users"
+msgid "Username"
+msgstr "Пользователи"
+
+#: templates/users.html:22
+msgid "first name"
+msgstr "Имя"
+
+#: templates/users.html:23
+msgid "Date creating"
+msgstr "Дата создания"
+
+#: templates/users.html:35
+msgid "Edit"
+msgstr "Редактировать"
+
+#: templates/users.html:36
+msgid "Delete"
+msgstr "Удалить"
