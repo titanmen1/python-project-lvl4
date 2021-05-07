@@ -1,7 +1,8 @@
 from django.urls import path
 from django.views.generic import TemplateView
 from task_manager.views import UsersList, CreateUser, LoginView, EditUser, DelUser, LogoutView, StatusesList, \
-    StatusEdit, StatusDelete, StatusCreate, TasksList, TaskEdit, TaskDelete, TaskCreate
+    StatusEdit, StatusDelete, StatusCreate, TasksList, TaskEdit, TaskDelete, TaskCreate, LabelsList, LabelCreate, \
+    LabelEdit, LabelDelete
 
 urlpatterns = [
     path('', TemplateView.as_view(template_name="index.html"), name='index'),
@@ -21,4 +22,9 @@ urlpatterns = [
     path('tasks/create/', TaskCreate.as_view(), name='create_task'),
     path('tasks/<int:pk>/update/', TaskEdit.as_view(), name='update_task'),
     path('tasks/<int:pk>/delete/', TaskDelete.as_view(), name='delete_task'),
+
+    path('labels/', LabelsList.as_view(), name='labels'),
+    path('labels/create/', LabelCreate.as_view(), name='create_label'),
+    path('labels/<int:pk>/update/', LabelEdit.as_view(), name='update_label'),
+    path('labels/<int:pk>/delete/', LabelDelete.as_view(), name='delete_label'),
 ]

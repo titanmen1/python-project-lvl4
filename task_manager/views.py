@@ -9,8 +9,11 @@ from django.contrib.auth.models import User
 from django.contrib.auth.views import LoginView, LogoutView
 from django.urls import reverse, reverse_lazy
 from django.utils.translation import gettext as _
+
+from task_manager.filter import TaskFilter
 from task_manager.forms import UserForm
-from task_manager.models import Status, Task
+from task_manager.models import Status, Task, Label
+from django_filters.views import FilterView
 
 
 class UsersList(ListView):
@@ -129,18 +132,16 @@ class StatusDelete(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
         return super().delete(request, *args, **kwargs)
 
 
-class TasksList(ListView):
+class TasksList(FilterView):
     template_name = "tasks/tasks_list.html"
     context_object_name = "tasks"
-
-    def get_queryset(self):
-        return Task.objects.all()
+    filterset_class = TaskFilter
 
 
 class TaskCreate(SuccessMessageMixin, CreateView):
     model = Task
     template_name = "tasks/tasks_create.html"
-    fields = ['name', 'status', 'description']
+    fields = ['name', 'status', 'description', 'executor', 'labels']
     success_message = _('You are create new tasks')
 
     def get_success_url(self):
@@ -154,7 +155,7 @@ class TaskCreate(SuccessMessageMixin, CreateView):
 class TaskEdit(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     model = Task
     template_name = "tasks/tasks_edit.html"
-    fields = ['name', 'status', 'description']
+    fields = ['name', 'status', 'description', 'executor', 'labels']
     success_message = _('You are update task')
 
     def get_success_url(self):
@@ -175,3 +176,51 @@ class TaskDelete(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
             messages.error(self.request, _('Unable to delete task because this task created not you'))
             return redirect('tasks')
         return super().delete(request, *args, **kwargs)
+
+
+class LabelsList(ListView):
+    template_name = "labels/label_list.html"
+    context_object_name = "labels"
+
+    def get_queryset(self):
+        return Label.objects.all()
+
+
+class LabelCreate(SuccessMessageMixin, CreateView):
+    model = Label
+    template_name = "labels/label_create.html"
+    fields = ['name']
+    success_message = _('You are create new label')
+
+    def get_success_url(self):
+        return reverse('labels')
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
+
+class LabelEdit(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
+    model = Label
+    template_name = "labels/label_edit.html"
+    fields = ['name']
+    success_message = _('You are update label')
+
+    def get_success_url(self):
+        return reverse('labels')
+
+
+class LabelDelete(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
+    model = Label
+    template_name = "labels/label_delete.html"
+    success_message = _('label deleted')
+
+    def get_success_url(self):
+        return reverse('labels')
+
+    def delete(self, request, *args, **kwargs):
+        if self.get_object().labels.all().exists():
+            messages.error(self.request, _('Unable to delete label because it is in use'))
+            return redirect('labels')
+        return super().delete(request, *args, **kwargs)
+
