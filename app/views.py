@@ -10,9 +10,9 @@ from django.contrib.auth.views import LoginView, LogoutView
 from django.urls import reverse, reverse_lazy
 from django.utils.translation import gettext as _
 
-from task_manager.filter import TaskFilter
-from task_manager.forms import UserForm
-from task_manager.models import Status, Task, Label
+from app.filter import TaskFilter
+from app.forms import UserForm
+from app.models import Status, Task, Label
 from django_filters.views import FilterView
 
 

@@ -3,7 +3,7 @@ from django_filters import FilterSet
 from django_filters.filters import BooleanFilter, ModelChoiceFilter
 from django.utils.translation import gettext as _
 
-from task_manager.models import Label, Task
+from app.models import Label, Task
 
 
 class TaskFilter(FilterSet):
