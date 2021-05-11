@@ -42,7 +42,7 @@ class LoginView(SuccessMessageMixin, LoginView):
         return reverse('index')
 
 
-class LogoutView(SuccessMessageMixin, LogoutView):
+class LogoutView(LogoutView):
     # template_name = 'logout.html'
     # success_message = _('You are logged out')
     #

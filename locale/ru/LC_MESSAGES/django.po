@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-11 21:49+0300\n"
+"POT-Creation-Date: 2021-05-11 21:59+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,91 +36,89 @@ msgstr "Вы создали нового пользователя"
 msgid "You are logged in"
 msgstr "Вы залогинены"
 
-#: app/views.py:46
-#, fuzzy
-#| msgid "You are logged in"
+#: app/views.py:53
 msgid "You are logged out"
 msgstr "Вы разлогинены"
 
-#: app/views.py:57
+#: app/views.py:62
 msgid "You do not have permission to modify another user."
 msgstr "Вы не имеете прав на редактирование другого пользователя"
 
-#: app/views.py:72
+#: app/views.py:77
 msgid "You do not have permission to delete another user."
 msgstr "Вы не имеете прав на удаление другого пользователя"
 
-#: app/views.py:74
+#: app/views.py:79
 msgid "User deleted"
 msgstr "Пользователь был удален"
 
-#: app/views.py:89
+#: app/views.py:94
 msgid "Unable to delete user because it is in use"
 msgstr ""
 
-#: app/views.py:106
+#: app/views.py:111
 #, fuzzy
 #| msgid "You are create new user"
 msgid "You are create new status"
 msgstr "Вы создали нового пользователя"
 
-#: app/views.py:116
+#: app/views.py:121
 #, fuzzy
 #| msgid "You are create new user"
 msgid "You are update status"
 msgstr "Вы создали нового пользователя"
 
-#: app/views.py:125
+#: app/views.py:130
 #, fuzzy
 #| msgid "User deleted"
 msgid "Status deleted"
 msgstr "Пользователь был удален"
 
-#: app/views.py:132
+#: app/views.py:137
 msgid "Unable to delete status because it is in use"
 msgstr ""
 
-#: app/views.py:147
+#: app/views.py:152
 #, fuzzy
 #| msgid "You are create new user"
 msgid "You are create new tasks"
 msgstr "Вы создали нового пользователя"
 
-#: app/views.py:161
+#: app/views.py:166
 #, fuzzy
 #| msgid "You are create new user"
 msgid "You are update task"
 msgstr "Вы создали нового пользователя"
 
-#: app/views.py:170
+#: app/views.py:175
 #, fuzzy
 #| msgid "User deleted"
 msgid "task deleted"
 msgstr "Пользователь был удален"
 
-#: app/views.py:178
+#: app/views.py:183
 msgid "Unable to delete task because this task created not you"
 msgstr ""
 
-#: app/views.py:195
+#: app/views.py:200
 #, fuzzy
 #| msgid "You are create new user"
 msgid "You are create new label"
 msgstr "Вы создали нового пользователя"
 
-#: app/views.py:209
+#: app/views.py:214
 #, fuzzy
 #| msgid "You are create new user"
 msgid "You are update label"
 msgstr "Вы создали нового пользователя"
 
-#: app/views.py:218
+#: app/views.py:223
 #, fuzzy
 #| msgid "User deleted"
 msgid "label deleted"
 msgstr "Пользователь был удален"
 
-#: app/views.py:225
+#: app/views.py:230
 msgid "Unable to delete label because it is in use"
 msgstr ""
 
