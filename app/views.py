@@ -43,10 +43,15 @@ class LoginView(SuccessMessageMixin, LoginView):
 
 
 class LogoutView(SuccessMessageMixin, LogoutView):
-    success_message = _('You are logged out')
+    # template_name = 'logout.html'
+    # success_message = _('You are logged out')
+    #
+    # def get_success_url(self):
+    #     return reverse('index')
 
-    def get_success_url(self):
-        return reverse('index')
+    def dispatch(self, request, *args, **kwargs):
+        messages.info(request, _('You are logged out'))
+        return super().dispatch(request, *args, **kwargs)
 
 
 class EditUser(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
