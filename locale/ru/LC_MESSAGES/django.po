@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-11 21:40+0300\n"
+"POT-Creation-Date: 2021-05-11 21:49+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -145,12 +145,12 @@ msgstr ""
 msgid "Labels"
 msgstr ""
 
-#: templates/base.html:47
+#: templates/base.html:47 templates/logout.html:12
 msgid "Logout"
 msgstr "Выход"
 
-#: templates/base.html:51 templates/login.html:12 templates/logout.html:12
-msgid "Login"
+#: templates/base.html:51
+msgid "Sing in"
 msgstr "Вход"
 
 #: templates/base.html:53
@@ -200,6 +200,10 @@ msgstr "Редактировать"
 #: templates/tasks/tasks_list.html:57 templates/users.html:36
 msgid "Delete"
 msgstr "Удалить"
+
+#: templates/login.html:12
+msgid "Login"
+msgstr "Войти"
 
 #: templates/statuses/statuses_list.html:18
 #, fuzzy
