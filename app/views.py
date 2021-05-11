@@ -42,7 +42,9 @@ class LoginView(SuccessMessageMixin, LoginView):
         return reverse('index')
 
 
-class LogoutView(LogoutView):
+class LogoutView(SuccessMessageMixin, LogoutView):
+    success_message = _('You are logged out')
+
     def get_success_url(self):
         return reverse('index')
 

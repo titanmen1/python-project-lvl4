@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-06 11:49+0300\n"
+"POT-Creation-Date: 2021-05-11 21:40+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,25 +20,109 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: task_manager/views.py:25
+#: app/filter.py:14
+msgid "Only their own tasks"
+msgstr ""
+
+#: app/filter.py:20
+msgid "Label"
+msgstr ""
+
+#: app/views.py:31
 msgid "You are create new user"
 msgstr "Вы создали нового пользователя"
 
-#: task_manager/views.py:33
+#: app/views.py:39
 msgid "You are logged in"
-msgstr "Вы авторизовались"
+msgstr "Вы залогинены"
 
-#: task_manager/views.py:49
+#: app/views.py:46
+#, fuzzy
+#| msgid "You are logged in"
+msgid "You are logged out"
+msgstr "Вы разлогинены"
+
+#: app/views.py:57
 msgid "You do not have permission to modify another user."
 msgstr "Вы не имеете прав на редактирование другого пользователя"
 
-#: task_manager/views.py:64
+#: app/views.py:72
 msgid "You do not have permission to delete another user."
 msgstr "Вы не имеете прав на удаление другого пользователя"
 
-#: task_manager/views.py:66
+#: app/views.py:74
 msgid "User deleted"
 msgstr "Пользователь был удален"
+
+#: app/views.py:89
+msgid "Unable to delete user because it is in use"
+msgstr ""
+
+#: app/views.py:106
+#, fuzzy
+#| msgid "You are create new user"
+msgid "You are create new status"
+msgstr "Вы создали нового пользователя"
+
+#: app/views.py:116
+#, fuzzy
+#| msgid "You are create new user"
+msgid "You are update status"
+msgstr "Вы создали нового пользователя"
+
+#: app/views.py:125
+#, fuzzy
+#| msgid "User deleted"
+msgid "Status deleted"
+msgstr "Пользователь был удален"
+
+#: app/views.py:132
+msgid "Unable to delete status because it is in use"
+msgstr ""
+
+#: app/views.py:147
+#, fuzzy
+#| msgid "You are create new user"
+msgid "You are create new tasks"
+msgstr "Вы создали нового пользователя"
+
+#: app/views.py:161
+#, fuzzy
+#| msgid "You are create new user"
+msgid "You are update task"
+msgstr "Вы создали нового пользователя"
+
+#: app/views.py:170
+#, fuzzy
+#| msgid "User deleted"
+msgid "task deleted"
+msgstr "Пользователь был удален"
+
+#: app/views.py:178
+msgid "Unable to delete task because this task created not you"
+msgstr ""
+
+#: app/views.py:195
+#, fuzzy
+#| msgid "You are create new user"
+msgid "You are create new label"
+msgstr "Вы создали нового пользователя"
+
+#: app/views.py:209
+#, fuzzy
+#| msgid "You are create new user"
+msgid "You are update label"
+msgstr "Вы создали нового пользователя"
+
+#: app/views.py:218
+#, fuzzy
+#| msgid "User deleted"
+msgid "label deleted"
+msgstr "Пользователь был удален"
+
+#: app/views.py:225
+msgid "Unable to delete label because it is in use"
+msgstr ""
 
 #: templates/base.html:35
 msgid "Task Manager"
@@ -48,33 +132,101 @@ msgstr "Менеджер задач"
 msgid "Users"
 msgstr "Пользователи"
 
+#: templates/base.html:40 templates/statuses/statuses_list.html:14
+msgid "Statuses"
+msgstr ""
+
+#: templates/base.html:41 templates/labels/label_list.html:14
+#: templates/tasks/tasks_list.html:14
+msgid "Tasks"
+msgstr ""
+
 #: templates/base.html:42
+msgid "Labels"
+msgstr ""
+
+#: templates/base.html:47
 msgid "Logout"
 msgstr "Выход"
 
-#: templates/base.html:46 templates/login.html:12 templates/logout.html:12
+#: templates/base.html:51 templates/login.html:12 templates/logout.html:12
 msgid "Login"
-msgstr "Логин"
+msgstr "Вход"
 
-#: templates/base.html:48
+#: templates/base.html:53
 msgid "Registration"
 msgstr "Регистрация"
 
-#: templates/del_user.html:12
+#: templates/del_user.html:12 templates/labels/label_delete.html:12
+#: templates/statuses/statuses_delete.html:12
+#: templates/tasks/tasks_delete.html:12
 msgid "Are you sure you want to delete"
 msgstr "Вы действительно хотите удалить"
 
-#: templates/del_user.html:13
+#: templates/del_user.html:13 templates/labels/label_delete.html:13
+#: templates/statuses/statuses_delete.html:13
+#: templates/tasks/tasks_delete.html:13
 msgid "Confirm"
 msgstr "Подтвердить"
 
-#: templates/edit_user.html:13
+#: templates/edit_user.html:13 templates/labels/label_edit.html:13
+#: templates/statuses/statuses_edit.html:13 templates/tasks/tasks_edit.html:13
 msgid "Save"
 msgstr "Сохранить"
 
-#: templates/register.html:13
+#: templates/labels/label_create.html:13 templates/register.html:13
+#: templates/statuses/statuses_create.html:13
+#: templates/tasks/tasks_create.html:13
 msgid "Create"
 msgstr "Создать"
+
+#: templates/labels/label_list.html:18 templates/tasks/tasks_list.html:18
+#, fuzzy
+#| msgid "Create"
+msgid "Create task"
+msgstr "Создать"
+
+#: templates/labels/label_list.html:25 templates/statuses/statuses_list.html:25
+#: templates/tasks/tasks_list.html:34
+msgid "Name"
+msgstr ""
+
+#: templates/labels/label_list.html:35 templates/statuses/statuses_list.html:37
+#: templates/tasks/tasks_list.html:56 templates/users.html:35
+msgid "Edit"
+msgstr "Редактировать"
+
+#: templates/labels/label_list.html:36 templates/statuses/statuses_list.html:38
+#: templates/tasks/tasks_list.html:57 templates/users.html:36
+msgid "Delete"
+msgstr "Удалить"
+
+#: templates/statuses/statuses_list.html:18
+#, fuzzy
+#| msgid "Create"
+msgid "Create status"
+msgstr "Создать"
+
+#: templates/statuses/statuses_list.html:26 templates/tasks/tasks_list.html:37
+#: templates/users.html:23
+msgid "Date creating"
+msgstr "Дата создания"
+
+#: templates/tasks/tasks_list.html:27
+msgid "Show"
+msgstr ""
+
+#: templates/tasks/tasks_list.html:35
+msgid "Author"
+msgstr ""
+
+#: templates/tasks/tasks_list.html:36
+msgid "Status"
+msgstr ""
+
+#: templates/tasks/tasks_list.html:38
+msgid "labels"
+msgstr ""
 
 #: templates/users.html:21
 #, fuzzy
@@ -85,15 +237,3 @@ msgstr "Пользователи"
 #: templates/users.html:22
 msgid "first name"
 msgstr "Имя"
-
-#: templates/users.html:23
-msgid "Date creating"
-msgstr "Дата создания"
-
-#: templates/users.html:35
-msgid "Edit"
-msgstr "Редактировать"
-
-#: templates/users.html:36
-msgid "Delete"
-msgstr "Удалить"
