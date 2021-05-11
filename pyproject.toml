@@ -4,6 +4,10 @@ version = "0.1.0"
 description = ""
 authors = ["Artem Arkhipov <arkhipov@algomost.ru>"]
 
+packages = [
+  { include = "website" },
+]
+
 [tool.poetry.dependencies]
 python = "^3.8"
 Django = "^3.2"
@@ -13,6 +17,8 @@ django-filter = "^2.4.0"
 rollbar = "^0.15.2"
 
 [tool.poetry.dev-dependencies]
+flake8 = "^3.9.2"
+coverage = "^5.5"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
