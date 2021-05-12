@@ -149,7 +149,7 @@ class TasksList(FilterView):
 class TaskCreate(SuccessMessageMixin, CreateView):
     model = Task
     template_name = "tasks/tasks_create.html"
-    fields = ['name', 'status', 'description', 'executor', 'labels']
+    fields = ['name', 'description', 'status', 'executor', 'labels']
     success_message = _('You are create new tasks')
 
     def get_success_url(self):
