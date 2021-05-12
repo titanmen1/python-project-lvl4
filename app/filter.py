@@ -22,7 +22,7 @@ class TaskFilter(FilterSet):
 
     def filter_self_tasks(self, queryset, name, value):
         if value:
-            return queryset.filter(creator=self.request.user)
+            return queryset.filter(author=self.request.user)
         return queryset
 
     class Meta:
