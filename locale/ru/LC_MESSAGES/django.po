@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-12 18:18+0300\n"
+"POT-Creation-Date: 2021-05-12 18:47+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -48,81 +48,81 @@ msgstr "Пользователь успешно изменён"
 msgid "You do not have permission to modify another user."
 msgstr "Вы не имеете прав на редактирование другого пользователя"
 
-#: app/views.py:73
+#: app/views.py:76
 msgid "You do not have permission to delete another user."
 msgstr "Вы не имеете прав на удаление другого пользователя"
 
-#: app/views.py:75
+#: app/views.py:78 app/views.py:95
 msgid "User deleted"
 msgstr "Пользователь успешно удалён"
 
-#: app/views.py:90
+#: app/views.py:93
 msgid "Unable to delete user because it is in use"
 msgstr ""
 
-#: app/views.py:107
-#, fuzzy
-#| msgid "You are create new user"
+#: app/views.py:111
 msgid "You are create new status"
-msgstr "Вы создали нового пользователя"
+msgstr "Статус успешно создан"
 
-#: app/views.py:117
-#, fuzzy
-#| msgid "You are create new user"
+#: app/views.py:121
 msgid "You are update status"
-msgstr "Вы создали нового пользователя"
+msgstr "Статус успешно изменён"
 
-#: app/views.py:126
+#: app/views.py:130
 #, fuzzy
 #| msgid "User deleted"
 msgid "Status deleted"
 msgstr "Пользователь был удален"
 
-#: app/views.py:133
+#: app/views.py:137
 msgid "Unable to delete status because it is in use"
 msgstr ""
 
-#: app/views.py:148
+#: app/views.py:139
+msgid "Status successfully deleted"
+msgstr "Статус успешно удалён"
+
+#: app/views.py:153
 #, fuzzy
 #| msgid "You are create new user"
 msgid "You are create new tasks"
 msgstr "Вы создали нового пользователя"
 
-#: app/views.py:162
+#: app/views.py:167
 #, fuzzy
 #| msgid "You are create new user"
 msgid "You are update task"
 msgstr "Вы создали нового пользователя"
 
-#: app/views.py:171
+#: app/views.py:176
 #, fuzzy
 #| msgid "User deleted"
 msgid "task deleted"
 msgstr "Пользователь был удален"
 
-#: app/views.py:179
+#: app/views.py:183
 msgid "Unable to delete task because this task created not you"
 msgstr ""
 
-#: app/views.py:196
+#: app/views.py:200
 #, fuzzy
 #| msgid "You are create new user"
 msgid "You are create new label"
 msgstr "Вы создали нового пользователя"
 
-#: app/views.py:210
+#: app/views.py:214
 #, fuzzy
 #| msgid "You are create new user"
 msgid "You are update label"
 msgstr "Вы создали нового пользователя"
 
-#: app/views.py:219
+#: app/views.py:223
 #, fuzzy
 #| msgid "User deleted"
 msgid "label deleted"
 msgstr "Пользователь был удален"
 
-#: app/views.py:226
+#: app/views.py:230
 msgid "Unable to delete label because it is in use"
 msgstr ""
 
@@ -136,7 +136,7 @@ msgstr "Пользователи"
 
 #: templates/base.html:40 templates/statuses/statuses_list.html:14
 msgid "Statuses"
-msgstr ""
+msgstr "Статусы"
 
 #: templates/base.html:41 templates/labels/label_list.html:14
 #: templates/tasks/tasks_list.html:14
@@ -165,11 +165,11 @@ msgstr "Регистрация"
 msgid "Are you sure you want to delete"
 msgstr "Вы действительно хотите удалить"
 
-#: templates/del_user.html:13
+#: templates/del_user.html:13 templates/statuses/statuses_delete.html:13
 msgid "Yes, delete"
 msgstr "Да, удалить"
 
-#: templates/edit_user.html:13
+#: templates/edit_user.html:13 templates/statuses/statuses_edit.html:13
 msgid "Update"
 msgstr "Изменить"
 
@@ -179,14 +179,11 @@ msgstr "Изменить"
 msgid "Create"
 msgstr "Создать"
 
-#: templates/labels/label_delete.html:13
-#: templates/statuses/statuses_delete.html:13
-#: templates/tasks/tasks_delete.html:13
+#: templates/labels/label_delete.html:13 templates/tasks/tasks_delete.html:13
 msgid "Confirm"
 msgstr "Подтвердить"
 
-#: templates/labels/label_edit.html:13 templates/statuses/statuses_edit.html:13
-#: templates/tasks/tasks_edit.html:13
+#: templates/labels/label_edit.html:13 templates/tasks/tasks_edit.html:13
 msgid "Save"
 msgstr "Сохранить"
 
@@ -220,10 +217,8 @@ msgid "Register"
 msgstr "Зарегистрировать"
 
 #: templates/statuses/statuses_list.html:18
-#, fuzzy
-#| msgid "Create"
 msgid "Create status"
-msgstr "Создать"
+msgstr "Создать статус"
 
 #: templates/statuses/statuses_list.html:26 templates/tasks/tasks_list.html:37
 #: templates/users.html:23
