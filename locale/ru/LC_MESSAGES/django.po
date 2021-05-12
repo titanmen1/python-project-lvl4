@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-12 18:53+0300\n"
+"POT-Creation-Date: 2021-05-12 19:03+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,7 +28,7 @@ msgstr ""
 msgid "Label"
 msgstr ""
 
-#: app/models.py:9
+#: app/models.py:9 app/models.py:16
 msgid "name"
 msgstr "Имя"
 
@@ -109,16 +109,12 @@ msgid "Unable to delete task because this task created not you"
 msgstr ""
 
 #: app/views.py:200
-#, fuzzy
-#| msgid "You are create new user"
 msgid "You are create new label"
-msgstr "Вы создали нового пользователя"
+msgstr "Метка успешно создана"
 
 #: app/views.py:214
-#, fuzzy
-#| msgid "You are create new user"
 msgid "You are update label"
-msgstr "Вы создали нового пользователя"
+msgstr "Метка успешно изменена"
 
 #: app/views.py:223
 #, fuzzy
@@ -129,6 +125,10 @@ msgstr "Пользователь был удален"
 #: app/views.py:230
 msgid "Unable to delete label because it is in use"
 msgstr ""
+
+#: app/views.py:232
+msgid "Label successfully deleted"
+msgstr "Метка успешно удалена"
 
 #: templates/base.html:35
 msgid "Task Manager"
@@ -142,14 +142,13 @@ msgstr "Пользователи"
 msgid "Statuses"
 msgstr "Статусы"
 
-#: templates/base.html:41 templates/labels/label_list.html:14
-#: templates/tasks/tasks_list.html:14
+#: templates/base.html:41 templates/tasks/tasks_list.html:14
 msgid "Tasks"
 msgstr ""
 
-#: templates/base.html:42
+#: templates/base.html:42 templates/labels/label_list.html:14
 msgid "Labels"
-msgstr ""
+msgstr "Метки"
 
 #: templates/base.html:47 templates/logout.html:12
 msgid "Logout"
@@ -169,11 +168,13 @@ msgstr "Регистрация"
 msgid "Are you sure you want to delete"
 msgstr "Вы действительно хотите удалить"
 
-#: templates/del_user.html:13 templates/statuses/statuses_delete.html:13
+#: templates/del_user.html:13 templates/labels/label_delete.html:13
+#: templates/statuses/statuses_delete.html:13
 msgid "Yes, delete"
 msgstr "Да, удалить"
 
-#: templates/edit_user.html:13 templates/statuses/statuses_edit.html:13
+#: templates/edit_user.html:13 templates/labels/label_edit.html:13
+#: templates/statuses/statuses_edit.html:13
 msgid "Update"
 msgstr "Изменить"
 
@@ -183,19 +184,9 @@ msgstr "Изменить"
 msgid "Create"
 msgstr "Создать"
 
-#: templates/labels/label_delete.html:13 templates/tasks/tasks_delete.html:13
-msgid "Confirm"
-msgstr "Подтвердить"
-
-#: templates/labels/label_edit.html:13 templates/tasks/tasks_edit.html:13
-msgid "Save"
-msgstr "Сохранить"
-
-#: templates/labels/label_list.html:18 templates/tasks/tasks_list.html:18
-#, fuzzy
-#| msgid "Create"
-msgid "Create task"
-msgstr "Создать"
+#: templates/labels/label_list.html:18
+msgid "Create label"
+msgstr "Создать метку"
 
 #: templates/labels/label_list.html:25 templates/statuses/statuses_list.html:25
 #: templates/tasks/tasks_list.html:34
@@ -228,6 +219,20 @@ msgstr "Создать статус"
 #: templates/users.html:23
 msgid "Date creating"
 msgstr "Дата создания"
+
+#: templates/tasks/tasks_delete.html:13
+msgid "Confirm"
+msgstr "Подтвердить"
+
+#: templates/tasks/tasks_edit.html:13
+msgid "Save"
+msgstr "Сохранить"
+
+#: templates/tasks/tasks_list.html:18
+#, fuzzy
+#| msgid "Create"
+msgid "Create task"
+msgstr "Создать"
 
 #: templates/tasks/tasks_list.html:27
 msgid "Show"
