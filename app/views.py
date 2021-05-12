@@ -182,6 +182,7 @@ class TaskDelete(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
         if self.get_object().author != request.user:
             messages.error(self.request, _('Unable to delete task because this task created not you'))
             return redirect('tasks')
+        messages.success(self.request, _('Task successfully deleted'))
         return super().delete(request, *args, **kwargs)
 
 

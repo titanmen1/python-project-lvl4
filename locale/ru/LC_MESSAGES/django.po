@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-12 19:03+0300\n"
+"POT-Creation-Date: 2021-05-12 19:16+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,15 +22,35 @@ msgstr ""
 
 #: app/filter.py:14
 msgid "Only their own tasks"
-msgstr ""
+msgstr "Только свои задачи"
 
 #: app/filter.py:20
 msgid "Label"
-msgstr ""
+msgstr "Метка"
 
-#: app/models.py:9 app/models.py:16
+#: app/models.py:9 app/models.py:16 app/models.py:23
 msgid "name"
 msgstr "Имя"
+
+#: app/models.py:24
+msgid "author"
+msgstr "Автор"
+
+#: app/models.py:25
+msgid "executor"
+msgstr "Исполнитель"
+
+#: app/models.py:27
+msgid "status"
+msgstr "Статус"
+
+#: app/models.py:28 templates/tasks/tasks_list.html:38
+msgid "labels"
+msgstr "Метки"
+
+#: app/models.py:29
+msgid "description"
+msgstr "Описание"
 
 #: app/views.py:31
 msgid "User successfully registered"
@@ -87,16 +107,12 @@ msgid "Status successfully deleted"
 msgstr "Статус успешно удалён"
 
 #: app/views.py:153
-#, fuzzy
-#| msgid "You are create new user"
 msgid "You are create new tasks"
-msgstr "Вы создали нового пользователя"
+msgstr "Задача успешно создана"
 
 #: app/views.py:167
-#, fuzzy
-#| msgid "You are create new user"
 msgid "You are update task"
-msgstr "Вы создали нового пользователя"
+msgstr "Задача успешно изменена"
 
 #: app/views.py:176
 #, fuzzy
@@ -108,25 +124,29 @@ msgstr "Пользователь был удален"
 msgid "Unable to delete task because this task created not you"
 msgstr ""
 
-#: app/views.py:200
+#: app/views.py:185
+msgid "Task successfully deleted"
+msgstr "Задача успешно удалена"
+
+#: app/views.py:201
 msgid "You are create new label"
 msgstr "Метка успешно создана"
 
-#: app/views.py:214
+#: app/views.py:215
 msgid "You are update label"
 msgstr "Метка успешно изменена"
 
-#: app/views.py:223
+#: app/views.py:224
 #, fuzzy
 #| msgid "User deleted"
 msgid "label deleted"
 msgstr "Пользователь был удален"
 
-#: app/views.py:230
+#: app/views.py:231
 msgid "Unable to delete label because it is in use"
 msgstr ""
 
-#: app/views.py:232
+#: app/views.py:233
 msgid "Label successfully deleted"
 msgstr "Метка успешно удалена"
 
@@ -144,7 +164,7 @@ msgstr "Статусы"
 
 #: templates/base.html:41 templates/tasks/tasks_list.html:14
 msgid "Tasks"
-msgstr ""
+msgstr "Задачи"
 
 #: templates/base.html:42 templates/labels/label_list.html:14
 msgid "Labels"
@@ -170,11 +190,12 @@ msgstr "Вы действительно хотите удалить"
 
 #: templates/del_user.html:13 templates/labels/label_delete.html:13
 #: templates/statuses/statuses_delete.html:13
+#: templates/tasks/tasks_delete.html:13
 msgid "Yes, delete"
 msgstr "Да, удалить"
 
 #: templates/edit_user.html:13 templates/labels/label_edit.html:13
-#: templates/statuses/statuses_edit.html:13
+#: templates/statuses/statuses_edit.html:13 templates/tasks/tasks_edit.html:13
 msgid "Update"
 msgstr "Изменить"
 
@@ -220,23 +241,13 @@ msgstr "Создать статус"
 msgid "Date creating"
 msgstr "Дата создания"
 
-#: templates/tasks/tasks_delete.html:13
-msgid "Confirm"
-msgstr "Подтвердить"
-
-#: templates/tasks/tasks_edit.html:13
-msgid "Save"
-msgstr "Сохранить"
-
 #: templates/tasks/tasks_list.html:18
-#, fuzzy
-#| msgid "Create"
 msgid "Create task"
-msgstr "Создать"
+msgstr "Создать задачу"
 
 #: templates/tasks/tasks_list.html:27
 msgid "Show"
-msgstr ""
+msgstr "Показать"
 
 #: templates/tasks/tasks_list.html:35
 msgid "Author"
@@ -244,10 +255,6 @@ msgstr ""
 
 #: templates/tasks/tasks_list.html:36
 msgid "Status"
-msgstr ""
-
-#: templates/tasks/tasks_list.html:38
-msgid "labels"
 msgstr ""
 
 #: templates/users.html:21
@@ -259,6 +266,12 @@ msgstr "Пользователи"
 #: templates/users.html:22
 msgid "Full name"
 msgstr "Полное имя"
+
+#~ msgid "Confirm"
+#~ msgstr "Подтвердить"
+
+#~ msgid "Save"
+#~ msgstr "Сохранить"
 
 #~ msgid "You are create new user"
 #~ msgstr "Вы создали нового пользователя"
