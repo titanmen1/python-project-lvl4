@@ -92,6 +92,7 @@ class DelUser(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixin, Dele
         if self.get_object().executor.all().exists() or self.get_object().author.all().exists():
             messages.error(self.request, _('Unable to delete user because it is in use'))
             return redirect('users')
+        messages.success(self.request, _('User deleted'))
         return super().delete(request, *args, **kwargs)
 
 
@@ -177,7 +178,6 @@ class TaskDelete(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
         return reverse('tasks')
 
     def delete(self, request, *args, **kwargs):
-        print(self.get_object().author, request.user)
         if self.get_object().author != request.user:
             messages.error(self.request, _('Unable to delete task because this task created not you'))
             return redirect('tasks')
