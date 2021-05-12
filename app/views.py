@@ -66,6 +66,9 @@ class EditUser(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixin, Upd
         messages.error(self.request, self.get_permission_denied_message())
         return redirect(self.permission_denied_url)
 
+    def get_success_url(self):
+        return reverse('users')
+
 
 class DelUser(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixin, DeleteView):
     model = User
