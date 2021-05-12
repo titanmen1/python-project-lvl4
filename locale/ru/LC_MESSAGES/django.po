@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-12 18:05+0300\n"
+"POT-Creation-Date: 2021-05-12 18:18+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -54,7 +54,7 @@ msgstr "Вы не имеете прав на удаление другого п�
 
 #: app/views.py:75
 msgid "User deleted"
-msgstr "Пользователь был удален"
+msgstr "Пользователь успешно удалён"
 
 #: app/views.py:90
 msgid "Unable to delete user because it is in use"
@@ -165,22 +165,30 @@ msgstr "Регистрация"
 msgid "Are you sure you want to delete"
 msgstr "Вы действительно хотите удалить"
 
-#: templates/del_user.html:13 templates/labels/label_delete.html:13
-#: templates/statuses/statuses_delete.html:13
-#: templates/tasks/tasks_delete.html:13
-msgid "Confirm"
-msgstr "Подтвердить"
+#: templates/del_user.html:13
+msgid "Yes, delete"
+msgstr "Да, удалить"
 
-#: templates/edit_user.html:13 templates/labels/label_edit.html:13
-#: templates/statuses/statuses_edit.html:13 templates/tasks/tasks_edit.html:13
-msgid "Save"
-msgstr "Сохранить"
+#: templates/edit_user.html:13
+msgid "Update"
+msgstr "Изменить"
 
 #: templates/labels/label_create.html:13
 #: templates/statuses/statuses_create.html:13
 #: templates/tasks/tasks_create.html:13
 msgid "Create"
 msgstr "Создать"
+
+#: templates/labels/label_delete.html:13
+#: templates/statuses/statuses_delete.html:13
+#: templates/tasks/tasks_delete.html:13
+msgid "Confirm"
+msgstr "Подтвердить"
+
+#: templates/labels/label_edit.html:13 templates/statuses/statuses_edit.html:13
+#: templates/tasks/tasks_edit.html:13
+msgid "Save"
+msgstr "Сохранить"
 
 #: templates/labels/label_list.html:18 templates/tasks/tasks_list.html:18
 #, fuzzy
