@@ -12,7 +12,6 @@ class User(AbstractUser):
         return self.get_full_name()
 
 
-
 class Status(models.Model):
     name = models.CharField(_('name'), max_length=64, unique=True)
 
