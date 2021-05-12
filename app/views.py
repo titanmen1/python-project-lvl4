@@ -1,5 +1,5 @@
 import datetime
-
+from django.contrib.auth import get_user_model
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin, PermissionRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
@@ -17,15 +17,13 @@ from django_filters.views import FilterView
 
 
 class UsersList(ListView):
+    model = get_user_model()
     template_name = "users.html"
     context_object_name = "users"
 
-    def get_queryset(self):
-        return User.objects.all()
-
 
 class CreateUser(SuccessMessageMixin, CreateView):
-    model = User
+    model = get_user_model()
     template_name = 'register.html'
     form_class = UserForm
     success_message = _('User successfully registered')
@@ -50,7 +48,7 @@ class LogoutView(LogoutView):
 
 
 class EditUser(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixin, UpdateView):
-    model = User
+    model = get_user_model()
     template_name = 'edit_user.html'
     form_class = UserForm
     success_message = _('User successfully updated')
@@ -71,7 +69,7 @@ class EditUser(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixin, Upd
 
 
 class DelUser(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixin, DeleteView):
-    model = User
+    model = get_user_model()
     template_name = 'del_user.html'
     permission_denied_message = _('You do not have permission to delete another user.')
     permission_denied_url = reverse_lazy('users')
