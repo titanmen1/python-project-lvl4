@@ -38,7 +38,7 @@ msgstr "Автор"
 
 #: app/models.py:25
 msgid "executor"
-msgstr "Исполнитель"
+msgstr "исполнитель"
 
 #: app/models.py:27
 msgid "status"
