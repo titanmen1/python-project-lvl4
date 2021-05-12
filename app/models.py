@@ -2,7 +2,6 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils.translation import gettext_lazy as _
 # Create your models here.
-from django.utils import timezone
 
 
 class Status(models.Model):
@@ -21,11 +20,18 @@ class Label(models.Model):
 
 class Task(models.Model):
     name = models.CharField(_('name'), max_length=64)
-    author = models.ForeignKey(User, on_delete=models.PROTECT, related_name='author', verbose_name=_('author'))
-    executor = models.ForeignKey(User, on_delete=models.PROTECT, related_name='executor', verbose_name=_('executor'),
+    author = models.ForeignKey(User, on_delete=models.PROTECT,
+                               related_name='author',
+                               verbose_name=_('author'))
+    executor = models.ForeignKey(User, on_delete=models.PROTECT,
+                                 related_name='executor',
+                                 verbose_name=_('executor'),
                                  blank=True, null=True)
-    status = models.ForeignKey(Status, on_delete=models.PROTECT, related_name='status', verbose_name=_('status'))
-    labels = models.ManyToManyField(Label, related_name='labels', verbose_name=_('labels'))
+    status = models.ForeignKey(Status, on_delete=models.PROTECT,
+                               related_name='status',
+                               verbose_name=_('status'))
+    labels = models.ManyToManyField(Label, related_name='labels',
+                                    verbose_name=_('labels'))
     description = models.TextField(_('description'), blank=True)
     date_create = models.DateTimeField(auto_now_add=True)
     date_finish = models.DateTimeField(blank=True, null=True)

@@ -1,11 +1,9 @@
-import datetime
 from django.contrib.auth import get_user_model
 from django.contrib import messages
-from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin, PermissionRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from django.shortcuts import redirect
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
-from django.contrib.auth.models import User
 from django.contrib.auth.views import LoginView, LogoutView
 from django.urls import reverse, reverse_lazy
 from django.utils.translation import gettext as _
@@ -47,13 +45,14 @@ class LogoutView(LogoutView):
         return super().dispatch(request, *args, **kwargs)
 
 
-class EditUser(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixin, UpdateView):
+class EditUser(LoginRequiredMixin, UserPassesTestMixin,
+               SuccessMessageMixin, UpdateView):
     model = get_user_model()
     template_name = 'edit_user.html'
     form_class = UserForm
     success_message = _('User successfully updated')
-
-    permission_denied_message = _('You do not have permission to modify another user.')
+    permission_denied_message = _(
+        'You do not have permission to modify another user.')
     permission_denied_url = reverse_lazy('users')
 
     def test_func(self):
@@ -68,10 +67,12 @@ class EditUser(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixin, Upd
         return reverse('users')
 
 
-class DelUser(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixin, DeleteView):
+class DelUser(LoginRequiredMixin, UserPassesTestMixin,
+              SuccessMessageMixin, DeleteView):
     model = get_user_model()
     template_name = 'del_user.html'
-    permission_denied_message = _('You do not have permission to delete another user.')
+    permission_denied_message = _(
+        'You do not have permission to delete another user.')
     permission_denied_url = reverse_lazy('users')
     success_message = _('User deleted')
 
@@ -87,8 +88,10 @@ class DelUser(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixin, Dele
         return redirect(self.permission_denied_url)
 
     def delete(self, request, *args, **kwargs):
-        if self.get_object().executor.all().exists() or self.get_object().author.all().exists():
-            messages.error(self.request, _('Unable to delete user because it is in use'))
+        if self.get_object().executor.all().exists() \
+                or self.get_object().author.all().exists():
+            messages.error(self.request, _(
+                'Unable to delete user because it is in use'))
             return redirect('users')
         messages.success(self.request, _('User deleted'))
         return super().delete(request, *args, **kwargs)
@@ -132,7 +135,8 @@ class StatusDelete(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
 
     def delete(self, request, *args, **kwargs):
         if self.get_object().status.all().exists():
-            messages.error(self.request, _('Unable to delete status because it is in use'))
+            messages.error(self.request, _(
+                'Unable to delete status because it is in use'))
             return redirect('statuses')
         messages.success(self.request,  _('Status successfully deleted'))
         return super().delete(request, *args, **kwargs)
@@ -178,7 +182,8 @@ class TaskDelete(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
 
     def delete(self, request, *args, **kwargs):
         if self.get_object().author != request.user:
-            messages.error(self.request, _('Unable to delete task because this task created not you'))
+            messages.error(self.request, _(
+                'Unable to delete task because this task created not you'))
             return redirect('tasks')
         messages.success(self.request, _('Task successfully deleted'))
         return super().delete(request, *args, **kwargs)
@@ -226,8 +231,8 @@ class LabelDelete(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
 
     def delete(self, request, *args, **kwargs):
         if self.get_object().labels.all().exists():
-            messages.error(self.request, _('Unable to delete label because it is in use'))
+            messages.error(self.request, _(
+                'Unable to delete label because it is in use'))
             return redirect('labels')
         messages.success(self.request, _('Label successfully deleted'))
         return super().delete(request, *args, **kwargs)
-
