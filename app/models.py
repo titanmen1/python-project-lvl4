@@ -39,7 +39,7 @@ class Task(models.Model):
                                related_name='status',
                                verbose_name=_('status'))
     labels = models.ManyToManyField(Label, related_name='labels',
-                                    verbose_name=_('labels'))
+                                    verbose_name=_('labels'), blank=True)
     description = models.TextField(_('description'), blank=True)
     date_create = models.DateTimeField(auto_now_add=True)
     date_finish = models.DateTimeField(blank=True, null=True)
