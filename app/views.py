@@ -138,7 +138,7 @@ class StatusDelete(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
             messages.error(self.request, _(
                 'Unable to delete status because it is in use'))
             return redirect('statuses')
-        messages.success(self.request,  _('Status successfully deleted'))
+        messages.success(self.request, _('Status successfully deleted'))
         return super().delete(request, *args, **kwargs)
 
 

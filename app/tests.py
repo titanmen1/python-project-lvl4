@@ -222,7 +222,7 @@ class URLSTests(TestCase):
         client = Client()
         status, tag, user = prepare_db(staff_user=True)
         client.force_login(user)
-        task = create_and_get_task()
+        # task = create_and_get_task()
         urls_200_ok = (
             reverse(TASK_LIST), reverse(STATUS_LIST), reverse(TAG_LIST),  # noqa: E501
             reverse(TASK_CREATE), reverse(TAG_CREATE), reverse(LOGIN), reverse('create'),  # noqa: E501
@@ -238,7 +238,7 @@ class TestPermissions(TestCase):
     def test_non_auth_access(self):
         client = Client()
         status, tag, user = prepare_db()
-        task = create_and_get_task()
+        # task = create_and_get_task()
         urls_302 = (
             reverse(TASK_LIST), reverse(STATUS_LIST), reverse(TAG_LIST),  # noqa: E501
             reverse(TASK_CREATE), reverse(TAG_CREATE),  # noqa: E501
