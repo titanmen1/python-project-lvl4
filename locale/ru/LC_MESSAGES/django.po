@@ -157,7 +157,7 @@ msgstr "Вход"
 
 #: templates/base.html:53
 msgid "Registration"
-msgstr "Зарегистрировать"
+msgstr "Регистрация"
 
 #: templates/del_user.html:12 templates/labels/label_delete.html:12
 #: templates/statuses/statuses_delete.html:12
@@ -209,7 +209,7 @@ msgstr "Войти"
 
 #: templates/register.html:13
 msgid "Register"
-msgstr "Регистрация"
+msgstr "Зарегистрировать"
 
 #: templates/statuses/statuses_list.html:18
 #, fuzzy
