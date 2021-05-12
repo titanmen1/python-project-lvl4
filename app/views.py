@@ -78,7 +78,7 @@ class DelUser(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixin, Dele
     success_message = _('User deleted')
 
     def get_success_url(self):
-        return reverse('index')
+        return reverse('users')
 
     def test_func(self):
         user = self.get_object()
