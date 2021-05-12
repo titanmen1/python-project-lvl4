@@ -11,7 +11,7 @@ from django.urls import reverse, reverse_lazy
 from django.utils.translation import gettext as _
 
 from app.filter import TaskFilter
-from app.forms import UserForm
+from app.forms import UserForm, TaskForm
 from app.models import Status, Task, Label
 from django_filters.views import FilterView
 
@@ -149,7 +149,7 @@ class TasksList(FilterView):
 class TaskCreate(SuccessMessageMixin, CreateView):
     model = Task
     template_name = "tasks/tasks_create.html"
-    fields = ['name', 'description', 'status', 'executor', 'labels']
+    form_class = TaskForm
     success_message = _('You are create new tasks')
 
     def get_success_url(self):
