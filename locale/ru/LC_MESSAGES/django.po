@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-12 17:56+0300\n"
+"POT-Creation-Date: 2021-05-12 18:05+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,96 +29,100 @@ msgid "Label"
 msgstr ""
 
 #: app/views.py:31
-msgid "You are create new user"
-msgstr "Вы создали нового пользователя"
+msgid "User successfully registered"
+msgstr "Пользователь успешно зарегистрирован"
 
 #: app/views.py:39
 msgid "You are logged in"
 msgstr "Вы залогинены"
 
-#: app/views.py:53
+#: app/views.py:48
 msgid "You are logged out"
 msgstr "Вы разлогинены"
 
-#: app/views.py:62
+#: app/views.py:56
+msgid "User successfully updated"
+msgstr "Пользователь успешно изменён"
+
+#: app/views.py:58
 msgid "You do not have permission to modify another user."
 msgstr "Вы не имеете прав на редактирование другого пользователя"
 
-#: app/views.py:77
+#: app/views.py:73
 msgid "You do not have permission to delete another user."
 msgstr "Вы не имеете прав на удаление другого пользователя"
 
-#: app/views.py:79
+#: app/views.py:75
 msgid "User deleted"
 msgstr "Пользователь был удален"
 
-#: app/views.py:94
+#: app/views.py:90
 msgid "Unable to delete user because it is in use"
 msgstr ""
 
-#: app/views.py:111
+#: app/views.py:107
 #, fuzzy
 #| msgid "You are create new user"
 msgid "You are create new status"
 msgstr "Вы создали нового пользователя"
 
-#: app/views.py:121
+#: app/views.py:117
 #, fuzzy
 #| msgid "You are create new user"
 msgid "You are update status"
 msgstr "Вы создали нового пользователя"
 
-#: app/views.py:130
+#: app/views.py:126
 #, fuzzy
 #| msgid "User deleted"
 msgid "Status deleted"
 msgstr "Пользователь был удален"
 
-#: app/views.py:137
+#: app/views.py:133
 msgid "Unable to delete status because it is in use"
 msgstr ""
 
-#: app/views.py:152
+#: app/views.py:148
 #, fuzzy
 #| msgid "You are create new user"
 msgid "You are create new tasks"
 msgstr "Вы создали нового пользователя"
 
-#: app/views.py:166
+#: app/views.py:162
 #, fuzzy
 #| msgid "You are create new user"
 msgid "You are update task"
 msgstr "Вы создали нового пользователя"
 
-#: app/views.py:175
+#: app/views.py:171
 #, fuzzy
 #| msgid "User deleted"
 msgid "task deleted"
 msgstr "Пользователь был удален"
 
-#: app/views.py:183
+#: app/views.py:179
 msgid "Unable to delete task because this task created not you"
 msgstr ""
 
-#: app/views.py:200
+#: app/views.py:196
 #, fuzzy
 #| msgid "You are create new user"
 msgid "You are create new label"
 msgstr "Вы создали нового пользователя"
 
-#: app/views.py:214
+#: app/views.py:210
 #, fuzzy
 #| msgid "You are create new user"
 msgid "You are update label"
 msgstr "Вы создали нового пользователя"
 
-#: app/views.py:223
+#: app/views.py:219
 #, fuzzy
 #| msgid "User deleted"
 msgid "label deleted"
 msgstr "Пользователь был удален"
 
-#: app/views.py:230
+#: app/views.py:226
 msgid "Unable to delete label because it is in use"
 msgstr ""
 
@@ -172,7 +176,7 @@ msgstr "Подтвердить"
 msgid "Save"
 msgstr "Сохранить"
 
-#: templates/labels/label_create.html:13 templates/register.html:13
+#: templates/labels/label_create.html:13
 #: templates/statuses/statuses_create.html:13
 #: templates/tasks/tasks_create.html:13
 msgid "Create"
@@ -192,7 +196,7 @@ msgstr ""
 #: templates/labels/label_list.html:35 templates/statuses/statuses_list.html:37
 #: templates/tasks/tasks_list.html:56 templates/users.html:35
 msgid "Edit"
-msgstr "Редактировать"
+msgstr "Изменить"
 
 #: templates/labels/label_list.html:36 templates/statuses/statuses_list.html:38
 #: templates/tasks/tasks_list.html:57 templates/users.html:36
@@ -202,6 +206,10 @@ msgstr "Удалить"
 #: templates/login.html:12
 msgid "Login"
 msgstr "Войти"
+
+#: templates/register.html:13
+msgid "Register"
+msgstr "Регистрация"
 
 #: templates/statuses/statuses_list.html:18
 #, fuzzy
@@ -239,6 +247,9 @@ msgstr "Пользователи"
 #: templates/users.html:22
 msgid "Full name"
 msgstr "Полное имя"
+
+#~ msgid "You are create new user"
+#~ msgstr "Вы создали нового пользователя"
 
 #~ msgid "first name"
 #~ msgstr "Имя"

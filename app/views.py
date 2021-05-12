@@ -28,7 +28,7 @@ class CreateUser(SuccessMessageMixin, CreateView):
     model = User
     template_name = 'register.html'
     form_class = UserForm
-    success_message = _('You are create new user')
+    success_message = _('User successfully registered')
 
     def get_success_url(self):
         return reverse('login')
@@ -43,21 +43,17 @@ class LoginView(SuccessMessageMixin, LoginView):
 
 
 class LogoutView(LogoutView):
-    # template_name = 'logout.html'
-    # success_message = _('You are logged out')
-    #
-    # def get_success_url(self):
-    #     return reverse('index')
 
     def dispatch(self, request, *args, **kwargs):
         messages.info(request, _('You are logged out'))
         return super().dispatch(request, *args, **kwargs)
 
 
-class EditUser(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+class EditUser(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixin, UpdateView):
     model = User
     template_name = 'edit_user.html'
     form_class = UserForm
+    success_message = _('User successfully updated')
 
     permission_denied_message = _('You do not have permission to modify another user.')
     permission_denied_url = reverse_lazy('users')
