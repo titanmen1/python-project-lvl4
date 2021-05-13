@@ -23,6 +23,6 @@ test:
 	poetry run python manage.py test
 
 test-coverage:
-	poetry run coverage run --source='.' manage.py test task_manager
-	coverage html
-	coverage report
+	poetry run coverage run --source='.' manage.py test
+	poetry run coverage report
+	poetry run coverage xml
