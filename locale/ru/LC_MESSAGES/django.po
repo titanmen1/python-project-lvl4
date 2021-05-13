@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-12 22:02+0300\n"
+"POT-Creation-Date: 2021-05-13 19:38+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,27 +28,28 @@ msgstr "Только свои задачи"
 msgid "Label"
 msgstr "Метка"
 
-#: app/models.py:16 app/models.py:23 app/models.py:30
+#: app/models.py:15 app/models.py:22 app/models.py:29
+#: templates/tasks/tasks_list.html:34
 msgid "name"
 msgstr "Имя"
 
-#: app/models.py:33
+#: app/models.py:32 templates/tasks/tasks_list.html:35
 msgid "author"
 msgstr "Автор"
 
-#: app/models.py:36
+#: app/models.py:35 templates/tasks/tasks_list.html:36
 msgid "executor"
 msgstr "исполнитель"
 
-#: app/models.py:40
+#: app/models.py:39 templates/tasks/tasks_list.html:37
 msgid "status"
 msgstr "Статус"
 
-#: app/models.py:42 templates/tasks/tasks_list.html:39
+#: app/models.py:41 templates/tasks/tasks_list.html:40
 msgid "labels"
 msgstr "Метки"
 
-#: app/models.py:43
+#: app/models.py:42 templates/tasks/tasks_list.html:38
 msgid "description"
 msgstr "Описание"
 
@@ -199,6 +200,14 @@ msgstr "Да, удалить"
 msgid "Update"
 msgstr "Изменить"
 
+#: templates/index.html:13
+msgid "Task manager"
+msgstr "Менеджер задач"
+
+#: templates/index.html:16
+msgid "Welcome to task manager"
+msgstr "Добро пожаловать в менеджер задач"
+
 #: templates/labels/label_create.html:13
 #: templates/statuses/statuses_create.html:13
 #: templates/tasks/tasks_create.html:13
@@ -210,17 +219,16 @@ msgid "Create label"
 msgstr "Создать метку"
 
 #: templates/labels/label_list.html:25 templates/statuses/statuses_list.html:25
-#: templates/tasks/tasks_list.html:34
 msgid "Name"
 msgstr ""
 
 #: templates/labels/label_list.html:35 templates/statuses/statuses_list.html:37
-#: templates/tasks/tasks_list.html:58 templates/users.html:33
+#: templates/tasks/tasks_list.html:60 templates/users.html:33
 msgid "Edit"
 msgstr "Изменить"
 
 #: templates/labels/label_list.html:36 templates/statuses/statuses_list.html:38
-#: templates/tasks/tasks_list.html:59 templates/users.html:34
+#: templates/tasks/tasks_list.html:61 templates/users.html:34
 msgid "Delete"
 msgstr "Удалить"
 
@@ -236,7 +244,7 @@ msgstr "Зарегистрировать"
 msgid "Create status"
 msgstr "Создать статус"
 
-#: templates/statuses/statuses_list.html:26 templates/tasks/tasks_list.html:38
+#: templates/statuses/statuses_list.html:26 templates/tasks/tasks_list.html:39
 msgid "Date creating"
 msgstr "Дата создания"
 
@@ -248,20 +256,6 @@ msgstr "Создать задачу"
 msgid "Show"
 msgstr "Показать"
 
-#: templates/tasks/tasks_list.html:35
-msgid "Author"
-msgstr ""
-
-#: templates/tasks/tasks_list.html:36
-msgid "Status"
-msgstr ""
-
-#: templates/tasks/tasks_list.html:37
-#, fuzzy
-#| msgid "description"
-msgid "Description"
-msgstr "Описание"
-
 #: templates/users.html:21
 #, fuzzy
 #| msgid "Users"
@@ -272,14 +266,4 @@ msgstr "Пользователи"
 msgid "Full name"
 msgstr "Полное имя"
 
-#~ msgid "Confirm"
-#~ msgstr "Подтвердить"
 
-#~ msgid "Save"
-#~ msgstr "Сохранить"
-
-#~ msgid "You are create new user"
-#~ msgstr "Вы создали нового пользователя"
-
-#~ msgid "first name"
-#~ msgstr "Имя"
