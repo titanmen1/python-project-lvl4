@@ -16,13 +16,13 @@ from django_filters.views import FilterView
 
 class UsersList(ListView):
     model = get_user_model()
-    template_name = "users.html"
+    template_name = "users/users.html"
     context_object_name = "users"
 
 
 class CreateUser(SuccessMessageMixin, CreateView):
     model = get_user_model()
-    template_name = 'register.html'
+    template_name = 'users/register.html'
     form_class = UserForm
     success_message = _('User successfully registered')
 
@@ -31,7 +31,7 @@ class CreateUser(SuccessMessageMixin, CreateView):
 
 
 class LoginView(SuccessMessageMixin, LoginView):
-    template_name = 'login.html'
+    template_name = 'users/login.html'
     success_message = _('You are logged in')
 
     def get_success_url(self):
@@ -48,7 +48,7 @@ class LogoutView(LogoutView):
 class EditUser(LoginRequiredMixin, UserPassesTestMixin,
                SuccessMessageMixin, UpdateView):
     model = get_user_model()
-    template_name = 'edit_user.html'
+    template_name = 'users/edit_user.html'
     form_class = UserForm
     success_message = _('User successfully updated')
     permission_denied_message = _(
@@ -70,7 +70,7 @@ class EditUser(LoginRequiredMixin, UserPassesTestMixin,
 class DelUser(LoginRequiredMixin, UserPassesTestMixin,
               SuccessMessageMixin, DeleteView):
     model = get_user_model()
-    template_name = 'del_user.html'
+    template_name = 'users/del_user.html'
     permission_denied_message = _(
         'You do not have permission to delete another user.')
     permission_denied_url = reverse_lazy('users')
