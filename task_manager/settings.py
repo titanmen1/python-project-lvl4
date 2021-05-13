@@ -148,9 +148,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-# ROLLBAR = {
-#     'access_token': 'ff4def00be794012bce769c52e25c967',
-#     'environment': 'development' if DEBUG else 'production',
-#     'branch': 'main',
-#     'root': '/home/projects/python-project-lvl4',
-# }
+ROLLBAR = {
+    'access_token': 'ff4def00be794012bce769c52e25c967',
+    'environment': 'development' if DEBUG else 'production',
+    'branch': 'main',
+    'root': '/home/projects/python-project-lvl4',
+}

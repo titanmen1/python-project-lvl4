@@ -3,3 +3,5 @@
 db.sqlite3
 db_old.sqlite3
 .env
+.coverage
+coverage.xml
