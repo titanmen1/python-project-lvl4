@@ -52,6 +52,8 @@ class EditUser(LoginRequiredMixin, CheckUserForDelMixin,
     template_name = 'users/edit_user.html'
     form_class = UserForm
     success_message = _('User successfully updated')
+    permission_denied_url = reverse_lazy('users')
+    permission_denied_message = _('You do not have permission to modify another user.')
 
     def handle_no_permission(self):
         messages.error(self.request, self.get_permission_denied_message())
@@ -66,6 +68,8 @@ class DelUser(LoginRequiredMixin, CheckUserForDelMixin,
     model = get_user_model()
     template_name = 'users/del_user.html'
     success_message = _('User deleted')
+    permission_denied_url = reverse_lazy('users')
+    permission_denied_message = _('You do not have permission to modify another user.')
 
     def get_success_url(self):
         return reverse('users')
