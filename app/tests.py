@@ -65,10 +65,13 @@ class TestRegisterAndLogin(TestCase):
     # User can register in system
     def test_register(self):
         client = Client()
-        response = client.post(reverse('create'), {'username': USERNAME,
-                                                   'password1': PASSWORD,
-                                                   'password2': PASSWORD
-                                                   }, follow=True)
+        response = client.post(reverse('create'), {
+            'first_name': 'first_name',
+            'last_name': 'last_name',
+            'username': USERNAME,
+            'password1': PASSWORD,
+            'password2': PASSWORD
+        }, follow=True)
         user_in_db = User.objects.get(username=USERNAME)
         self.assertEqual(response.status_code, 200)
         self.assertEqual(USERNAME, user_in_db.username)
