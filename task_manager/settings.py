@@ -13,6 +13,7 @@ import os
 from pathlib import Path
 import dj_database_url
 from dotenv import load_dotenv
+from django.urls import reverse_lazy
 
 load_dotenv()
 
@@ -154,3 +155,7 @@ ROLLBAR = {
     'branch': 'main',
     'root': '/home/projects/python-project-lvl4',
 }
+
+LOGIN_URL = reverse_lazy('login')
+LOGIN_REDIRECT_URL = reverse_lazy('root')
+LOGOUT_REDIRECT_URL = reverse_lazy('root')

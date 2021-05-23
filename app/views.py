@@ -10,6 +10,7 @@ from django.utils.translation import gettext as _
 
 from app.filter import TaskFilter
 from app.forms import UserForm, TaskForm
+from app.mixins import CheckUserForDelMixin
 from app.models import Status, Task, Label
 from django_filters.views import FilterView
 
@@ -45,19 +46,12 @@ class LogoutView(LogoutView):
         return super().dispatch(request, *args, **kwargs)
 
 
-class EditUser(LoginRequiredMixin, UserPassesTestMixin,
+class EditUser(LoginRequiredMixin, CheckUserForDelMixin,
                SuccessMessageMixin, UpdateView):
     model = get_user_model()
     template_name = 'users/edit_user.html'
     form_class = UserForm
     success_message = _('User successfully updated')
-    permission_denied_message = _(
-        'You do not have permission to modify another user.')
-    permission_denied_url = reverse_lazy('users')
-
-    def test_func(self):
-        user = self.get_object()
-        return user == self.request.user
 
     def handle_no_permission(self):
         messages.error(self.request, self.get_permission_denied_message())
@@ -67,21 +61,14 @@ class EditUser(LoginRequiredMixin, UserPassesTestMixin,
         return reverse('users')
 
 
-class DelUser(LoginRequiredMixin, UserPassesTestMixin,
+class DelUser(LoginRequiredMixin, CheckUserForDelMixin,
               SuccessMessageMixin, DeleteView):
     model = get_user_model()
     template_name = 'users/del_user.html'
-    permission_denied_message = _(
-        'You do not have permission to delete another user.')
-    permission_denied_url = reverse_lazy('users')
     success_message = _('User deleted')
 
     def get_success_url(self):
         return reverse('users')
-
-    def test_func(self):
-        user = self.get_object()
-        return user == self.request.user
 
     def handle_no_permission(self):
         messages.error(self.request, self.get_permission_denied_message())
@@ -97,7 +84,7 @@ class DelUser(LoginRequiredMixin, UserPassesTestMixin,
         return super().delete(request, *args, **kwargs)
 
 
-class StatusesList(ListView):
+class StatusesList(LoginRequiredMixin, ListView):
     template_name = "statuses/statuses_list.html"
     context_object_name = "statuses"
 
@@ -105,7 +92,7 @@ class StatusesList(ListView):
         return Status.objects.all()
 
 
-class StatusCreate(SuccessMessageMixin, CreateView):
+class StatusCreate(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     model = Status
     template_name = "statuses/statuses_create.html"
     fields = ['name']
@@ -142,13 +129,13 @@ class StatusDelete(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
         return super().delete(request, *args, **kwargs)
 
 
-class TasksList(FilterView):
+class TasksList(LoginRequiredMixin, FilterView):
     template_name = "tasks/tasks_list.html"
     context_object_name = "tasks"
     filterset_class = TaskFilter
 
 
-class TaskCreate(SuccessMessageMixin, CreateView):
+class TaskCreate(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     model = Task
     template_name = "tasks/tasks_create.html"
     form_class = TaskForm
@@ -175,7 +162,7 @@ class TaskEdit(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
 class TaskDelete(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
     model = Task
     template_name = "tasks/tasks_delete.html"
-    success_message = _('task deleted')
+    success_message = _('Task deleted')
 
     def get_success_url(self):
         return reverse('tasks')
@@ -189,7 +176,7 @@ class TaskDelete(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
         return super().delete(request, *args, **kwargs)
 
 
-class LabelsList(ListView):
+class LabelsList(LoginRequiredMixin, ListView):
     template_name = "labels/label_list.html"
     context_object_name = "labels"
 
@@ -197,7 +184,7 @@ class LabelsList(ListView):
         return Label.objects.all()
 
 
-class LabelCreate(SuccessMessageMixin, CreateView):
+class LabelCreate(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     model = Label
     template_name = "labels/label_create.html"
     fields = ['name']
@@ -224,7 +211,7 @@ class LabelEdit(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
 class LabelDelete(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
     model = Label
     template_name = "labels/label_delete.html"
-    success_message = _('label deleted')
+    success_message = _('Label deleted')
 
     def get_success_url(self):
         return reverse('labels')
